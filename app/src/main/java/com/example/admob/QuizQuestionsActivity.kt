@@ -72,9 +72,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionFour?.text = question.optionFour
 
         if (currentPosition == questionsList!!.size) {
-            btnSubmit?.text = "FINISH"
+            btnSubmit?.text = "RECOMEÇAR"
         } else {
-            btnSubmit?.text = "NEXT"
+            btnSubmit?.text = "PRÓXIMO"
         }
     }
 
@@ -168,7 +168,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 if(currentPosition == questionsList!!.size){
                     btnSubmit?.text = "FINISH"
                 }else{
-                    btnSubmit?.text = "GO TO NEXT QUESTION"
+                    btnSubmit?.text = "IR PARA A PRÓXIMA QUESTÃO"
                 }
 
                 mSelectedOption = 0

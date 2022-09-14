@@ -47,12 +47,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="Please enter your name."
+                android:text="Por favor, coloque seu nome"
                 android:textColor="#7A8089"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -65,11 +65,10 @@
                     android:id="@+id/nameIpt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
+                    android:hint="Nome"
                     android:inputType="textCapWords"
                     android:textColor="#363A43"
-                    android:textColorHint="#7A8089"
-                    >
+                    android:textColorHint="#7A8089">
 
                 </androidx.appcompat.widget.AppCompatEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -83,15 +82,19 @@
                 android:text="start"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-
                 />
-
-
-
-
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-        />
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </LinearLayout>
