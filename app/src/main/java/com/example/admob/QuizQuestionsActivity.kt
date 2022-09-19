@@ -148,10 +148,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 when(currentPosition <= questionsList!!.size){
                     true ->setQuestion()
                     else -> {
+                        val mFirestore = intent.getStringExtra("FirestoreNAME")
+
                         val intent = Intent(this, Result::class.java)
                         intent.putExtra(Constants.USER_NAME, mUserName)
                         intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
                         intent.putExtra(Constants.TOTAL_QUESTIONS, questionsList?.size)
+                        intent.putExtra("FirestoreNAME", mFirestore)
                         startActivity(intent)
                         finish()
                     }
