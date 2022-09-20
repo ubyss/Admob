@@ -32,6 +32,6 @@ Futuramente o aplicativo ganhará novas funcionalidades e facilitações para us
 
 Projeto desenvolvido e criado por:
 
-[Monalysa Klauck Yoshikawa](https://www.linkedin.com/in/monalysa-yoshikawa/).
-[Thiago Vinícius Santos Silva](https://www.linkedin.com/in/thiago-vin%C3%ADcius-1813521b9/).
-[Renan Herrmann](https://www.linkedin.com/in/r-herrmann/).
+- [Monalysa Klauck Yoshikawa](https://www.linkedin.com/in/monalysa-yoshikawa/).
+- [Thiago Vinícius Santos Silva](https://www.linkedin.com/in/thiago-vin%C3%ADcius-1813521b9/).
+- [Renan Herrmann](https://www.linkedin.com/in/r-herrmann/).
