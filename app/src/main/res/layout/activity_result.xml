@@ -20,7 +20,7 @@
 
     <ImageView
         android:layout_width="396dp"
-        android:layout_height="328dp"
+        android:layout_height="168dp"
         android:contentDescription="image"
         android:src="@drawable/ic_trophy"
 
@@ -82,6 +82,9 @@
         android:textColor="@color/design_default_color_primary"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+
+
 
 
 </LinearLayout>
