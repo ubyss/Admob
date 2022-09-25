@@ -17,11 +17,10 @@ import kotlinx.android.synthetic.main.activity_result.*
 
 class Result : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+        val dbFire = Firebase.firestore
 
         getData()
 
@@ -35,6 +34,18 @@ class Result : AppCompatActivity() {
 
         tvScore.text = "Seu score foi $correctAnswers de $totalQuestions"
 
+        val usuariosMap = hashMapOf(
+            "nome" to intent.getStringExtra(Constants.USER_NAME),
+            "placar" to correctAnswers,
+        )
+
+        dbFire.collection("Usuários").document(intent.getStringExtra(Constants.USER_NAME).toString())
+            .set(usuariosMap).addOnCompleteListener {
+                Log.d("DB", "Sucesso ao salvar os dados do usuario")
+            }.addOnFailureListener {
+
+            }
+
         btnFinish.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
@@ -42,8 +53,6 @@ class Result : AppCompatActivity() {
         btn_placar.setOnClickListener {
             startActivity(Intent(this, PlacarActivity::class.java))
         }
-
-
     }
 
     private fun getData(){

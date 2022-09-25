@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var mAdView : AdView
@@ -30,6 +31,26 @@ class MainActivity : AppCompatActivity() {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
+        val dbFire = Firebase.firestore
+        val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
+
+        val isFirstTime = intent.getBooleanExtra("isFirstTime", true)
+
+        if(isFirstTime) {
+        dbFire.collection("/${currentUser}").document("name")
+            .get()
+            .addOnSuccessListener {
+                if(it.data?.get("name") != null){
+                    nameIpt.setText(it.data?.get("name").toString())
+                    Log.i("Firestore", it.data?.get("name").toString(), )
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.w("Firestore", "Error adding document", e)
+            }
+        }
+
 
         val btnStart: Button = findViewById(R.id.startBtn)
         val nameIpt: EditText = findViewById(R.id.nameIpt)
